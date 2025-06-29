@@ -1,8 +1,8 @@
-let num1 = 0
+let num1 = null
 
-let num2 = 0
+let num2 = null
 
-let operator = 0
+let operator = null
 
 const add = function(num1,num2){
     return num1+num2
@@ -38,10 +38,12 @@ const populateDisplay=function(){
     // Function that updates and store the variables displayed to do the operations
     // Mechanic 1: You press a button, it displays a number. 
     const btnContainer = document.querySelector("#buttonContainer ")
+    const display = document.querySelector("#display")
     btnContainer.addEventListener("click",function(e){
         if (e.target.hasAttribute("data-value")){
             const buttonClicked=e.target
-            console.log(buttonClicked.getAttribute("data-value"))
+            //modify the content of the display
+            display.textContent=buttonClicked.getAttribute("data-value")
         }
     })
     //Next step : console log the right value 
@@ -52,4 +54,5 @@ const populateDisplay=function(){
     // 2 : They need to be able to display the right numbers to the display. 
     //Mechanic 2 : you clear the display and you do the same. 
 }
+
  populateDisplay()
