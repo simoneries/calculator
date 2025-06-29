@@ -37,9 +37,8 @@ const operate = function(num1,num2,operator){
 const populateDisplay=function(){
     // Function that updates and store the variables displayed to do the operations
     // Mechanic 1: You press a button, it displays a number. You can keep doing that until you press on the operator, then it's a call to save the number as variable.
-    const btnsClicked = document.querySelectorAll("button")
-    btnsClickedArray = Array.from(btnsClicked)
-    console.log(btnsClickedArray)
+    const btnContainer = document.querySelector("#buttonContainer")
+    btnContainer.addEventListener("click",()=>console.log("hello"))
     // 1 : You need to pass query selectors to all your buttons. 
     
     // 2 : They need to be able to display the right numbers to the display. 
