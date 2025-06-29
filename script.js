@@ -42,16 +42,13 @@ const populateDisplay=function(){
     btnContainer.addEventListener("click",function(e){
         if (e.target.hasAttribute("data-value")){
             const buttonClicked=e.target
-            //modify the content of the display
-            display.textContent=buttonClicked.getAttribute("data-value")
+            //modify the content of the display - pb here it's only updating ea
+            display.textContent += buttonClicked.getAttribute("data-value")
         }
     })
-    //Next step : console log the right value 
-    //next step : display the right numbers
+    //next step : display a serie of number
     //You can keep doing that until you press on the operator, then it's a call to save the number as variable.
-    // 1 : You need to pass query selectors to all your buttons. 
     
-    // 2 : They need to be able to display the right numbers to the display. 
     //Mechanic 2 : you clear the display and you do the same. 
 }
 
