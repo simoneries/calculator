@@ -37,7 +37,7 @@ const operate = function(num1,num2,operator){
 const populateDisplay=function(){
     // Function that updates and store the variables displayed to do the operations
     // Mechanic 1: You press a button, it displays a number. 
-    const btnContainer = document.querySelector("#buttonContainer ");
+    const btnContainer = document.querySelector("#buttonContainer");
     const display = document.querySelector("#display");
     btnContainer.addEventListener("click",function(e){
         if (e.target.hasAttribute("data-value")){
@@ -46,6 +46,14 @@ const populateDisplay=function(){
             display.textContent += buttonClicked.getAttribute("data-value");
         }
     });
-}
+
+};
+
+//Create a function to get the first value
+
+
+//create a function to store the second value
+
+//Create a function to call operate on everything
 
  populateDisplay()
