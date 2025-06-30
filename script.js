@@ -1,10 +1,8 @@
 let firstNum = null;
 
-let num2 = null;
+let secondNum = null;
 
 let operator = null;
-
-let test = null;
 
 const add = function(num1,num2){
     return num1+num2
@@ -64,6 +62,11 @@ const populateDisplay=function(){
                 return arr[1]=buttonClicked.getAttribute("data-operator")
             }
             getOperator()
+
+            function cleanDisplay(){
+                display.textContent = ""
+            }
+            cleanDisplay()
         }
     console.log(arr)
     } )
