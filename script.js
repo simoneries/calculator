@@ -1,8 +1,10 @@
-let num1 = null;
+let firstNum = null;
 
 let num2 = null;
 
 let operator = null;
+
+let test = null;
 
 const add = function(num1,num2){
     return num1+num2
@@ -34,26 +36,38 @@ const operate = function(num1,num2,operator){
     }
 };
 
+//Create a function that will store the values and the right operator in an array. 
 const populateDisplay=function(){
-    // Function that updates and store the variables displayed to do the operations
-    // Mechanic 1: You press a button, it displays a number. 
+
+    let arr = [];
     const btnContainer = document.querySelector("#buttonContainer");
     const display = document.querySelector("#display");
+
     btnContainer.addEventListener("click",function(e){
         if (e.target.hasAttribute("data-value")){
-            const buttonClicked=e.target
+            const buttonClicked=e.target;
             //modify the content of the display - pb here it's only updating ea
             display.textContent += buttonClicked.getAttribute("data-value");
         }
     });
 
+    //When I click on an operator, I want it to return the value of the number to the array
+    btnContainer.addEventListener("click", function(e){
+        if(e.target.hasAttribute("data-operator")){
+            const buttonClicked=e.target;
+            function getNum(){
+                return arr[0]=display.textContent;
+            }
+            getNum()
+
+            function getOperator(){
+                return arr[1]=buttonClicked.getAttribute("data-operator")
+            }
+            getOperator()
+        }
+    console.log(arr)
+    } )
 };
 
-//Create a function to get the first value
 
-
-//create a function to store the second value
-
-//Create a function to call operate on everything
-
- populateDisplay()
+populateDisplay()
