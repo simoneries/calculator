@@ -4,6 +4,8 @@ let secondNum = null;
 
 let operator = null;
 
+let arr = [];
+
 const add = function(num1,num2){
     return num1+num2
 };
@@ -34,22 +36,18 @@ const operate = function(num1,num2,operator){
     }
 };
 
-//Create a function that will store the values and the right operator in an array. 
-const populateDisplay=function(){
-
-    let arr = [];
+//Get a sequence of number + operator then clean the display
+const getNumOpSequence=function(){
     const btnContainer = document.querySelector("#buttonContainer");
     const display = document.querySelector("#display");
 
     btnContainer.addEventListener("click",function(e){
         if (e.target.hasAttribute("data-value")){
             const buttonClicked=e.target;
-            //modify the content of the display - pb here it's only updating ea
             display.textContent += buttonClicked.getAttribute("data-value");
         }
     });
 
-    //When I click on an operator, I want it to return the value of the number to the array
     btnContainer.addEventListener("click", function(e){
         if(e.target.hasAttribute("data-operator")){
             const buttonClicked=e.target;
@@ -67,10 +65,14 @@ const populateDisplay=function(){
                 display.textContent = ""
             }
             cleanDisplay()
-        }
-    console.log(arr)
-    } )
+            console.log(arr)
+        } 
+    });
+
+    
 };
 
+getNumOpSequence()
 
-populateDisplay()
+
+
