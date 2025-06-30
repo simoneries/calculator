@@ -49,8 +49,13 @@ const getNumOpSequence=function(){
     });
 
     btnContainer.addEventListener("click", function(e){
-        if(e.target.hasAttribute("data-operator")){
-            const buttonClicked=e.target;
+
+        const buttonClicked=e.target;
+
+        if (buttonClicked.hasAttribute("data-equal")){
+            return arr[3]=display.textContent;
+        } else if(buttonClicked.hasAttribute("data-operator")){
+            
             function getNum(){
                 return arr[0]=display.textContent;
             }
