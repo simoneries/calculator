@@ -4,6 +4,7 @@ let secondNum = null;
 
 let operator = null;
 
+let arr = []
 
 const add = function(num1,num2){
     return num1+num2
@@ -49,9 +50,33 @@ const calculatorLogic = function(){
         })
     };
     populateDisplay()
+
+    function saveNum(){
+        btnContainer.addEventListener("click",function(e){
+            const btnClicked = e.target;
+            if (btnClicked.hasAttribute("data-operator")){
+                arr[0]=display.textContent;
+                arr[1]=btnClicked.getAttribute("data-operator")
+            }
+        })
+    }
+    saveNum()
+
+    function useOperate(){
+        btnContainer.addEventListener("click", function(e){
+            const btnClicked = e.target;
+            if (btnClicked.hasAttribute("data-operator")&&arr.length>0){
+                secondNum = display.textContent;
+                result = operate(Number(arr[0]),Number(secondNum),arr[1])
+                console.log(result)
+            }
+        })
+    }
+    useOperate()
 };
 
 calculatorLogic()
+console.log(arr)
 
 //Mechanic : 
 //I click on buttons and it prompts a number on the display
