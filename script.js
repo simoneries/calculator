@@ -36,54 +36,8 @@ const operate = function(num1,num2,operator){
     }
 };
 
-//Get a sequence of number + operator then clean the display
-const getNumOpSequence=function(){
-    const btnContainer = document.querySelector("#buttonContainer");
-    const display = document.querySelector("#display");
 
-    btnContainer.addEventListener("click",function(e){
-        if (e.target.hasAttribute("data-value")){
-            const buttonClicked=e.target;
-            display.textContent += buttonClicked.getAttribute("data-value");
-        }
-    });
 
-    btnContainer.addEventListener("click", function(e){
-
-        const buttonClicked=e.target;
-
-        if (buttonClicked.hasAttribute("data-equal")){
-            
-            function returnSecondNum(){
-                return arr[2]=display.textContent;
-            }
-            returnSecondNum()
-
-            
-        } else if(buttonClicked.hasAttribute("data-operator")){
-            
-            function getNum(){
-                return arr[0]=display.textContent;
-            }
-            getNum()
-
-            function getOperator(){
-                return arr[1]=buttonClicked.getAttribute("data-operator")
-            }
-            getOperator()
-
-            function cleanDisplay(){
-                display.textContent = ""
-            }
-            cleanDisplay()
-            console.log(arr)
-        } 
-    });
-
-    
-};
-
-getNumOpSequence()
 
 
 
