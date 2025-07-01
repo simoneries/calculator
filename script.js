@@ -53,7 +53,13 @@ const getNumOpSequence=function(){
         const buttonClicked=e.target;
 
         if (buttonClicked.hasAttribute("data-equal")){
-            return arr[3]=display.textContent;
+            
+            function returnSecondNum(){
+                return arr[2]=display.textContent;
+            }
+            returnSecondNum()
+
+            
         } else if(buttonClicked.hasAttribute("data-operator")){
             
             function getNum(){
