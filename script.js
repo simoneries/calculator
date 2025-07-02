@@ -59,7 +59,7 @@ const calculatorLogic = function(){
                 saveNum(e)
                 display.textContent = ""
                 timesCalled += 1;
-            } else if (btnClicked.hasAttribute("data-operator")){
+            } else if (btnClicked.hasAttribute("data-operator")){//Block when the user click on another operator
                 let firstNum = arr[0]
                 secondNum=display.textContent;
                 arr[0] = operate(Number(firstNum),Number(secondNum),arr[1])
@@ -72,15 +72,6 @@ const calculatorLogic = function(){
                 result = operate(Number(arr[0]),Number(secondNum),arr[1])
                 console.log(result)
             }
-            //Block at the initial state
-            //Save numbers in arr
-            //Operate the numbers
-            //Modify result
-
-        //Block after the code has been run a first time.
-            //Modify the arr with the given result.
-            //save the operator
-            //Modify result
         })
         
     }
@@ -96,7 +87,6 @@ const calculatorLogic = function(){
 };
 
 calculatorLogic()
-console.log(arr)
 
 
 
