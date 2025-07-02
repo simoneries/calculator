@@ -1,19 +1,25 @@
+html{
+    display : flex;
+}
 body{
     background-color: rgb(253, 220, 164);
     display: flex;
+    flex:auto;
     justify-content: center;
 }
 
 #calcContainer{
     border-radius: 10px;
     background-color: rgb(243, 176, 61);
-    width:660px;
+    width:2/3;
     padding : 10px;
+    flex: auto;
 }
 
 #buttonContainer{
     display:flex;
     padding : 10px;
+    flex:auto;
     justify-content: flex-end;
 }
 
@@ -23,9 +29,16 @@ body{
     min-width : 66%;
 }
 
+#row{
+    padding:20px;
+    display : flex;
+    justify-content: space-around;
+}
 #operatorContainer{
     display: flex;
     flex-direction: column;
+    padding : 10px;
+    row-gap: 10px;
 }
 
 
