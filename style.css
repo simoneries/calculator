@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(253, 220, 164);
+    display: flex;
+    justify-content: center;
+}
+
+#calcContainer{
+    border-radius: 10px;
+    background-color: rgb(243, 176, 61);
+    width:660px;
+    padding : 10px;
+}
+
+#buttonContainer{
+    display:flex;
+    padding : 10px;
+    justify-content: flex-end;
+}
+
+#numberContainer{
+    display: flex;
+    flex-direction: column;
+    min-width : 66%;
+}
+
+#operatorContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#display{
+    color: white;
+    background-color: black;
+    min-height: 100px;
+    border-radius: 10px;
+}
+
+button{
+    border-radius: 5px;
+    border:none;
+    width: 100px;
+    height: 30px;
+
+}
