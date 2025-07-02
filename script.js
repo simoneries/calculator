@@ -54,6 +54,8 @@ const calculatorLogic = function(){
             const btnClicked = e.target;
             if (equalUsed){
                 display.textContent="";
+            } if(btnClicked.hasAttribute("data-return")){
+                display.textContent=display.textContent.slice(0,-1)
             }
             if(btnClicked.hasAttribute("data-value")){
                 if(display.textContent.includes(".") && btnClicked.getAttribute("data-value")==="."){ // prevent the use of double decimals
