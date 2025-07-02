@@ -25,15 +25,35 @@ const divide = function(num1,num2){
 
 const operate = function(num1,num2,operator){
     if (operator === "+"){
-        return add(num1,num2).toFixed(3)
+        if(add(num1,num2)%1==0){
+            return add(num1,num2)
+        } else {
+            return add(num1,num2).toFixed(3)
+        }
+        
     } else if (operator === "-"){
-        return substract(num1,num2).toFixed(3)
+        if(substract(num1,num2)%1==0){
+            return substract(num1,num2)
+        } else {
+            return substract(num1,num2).toFixed(3)
+        }
+        
     } else if (operator === "*"){
-        return multiply(num1,num2).toFixed(3)
+        if(multiply(num1,num2)%1==0){
+            return multiply(num1,num2)
+        } else {
+            return multiply(num1,num2).toFixed(3)
+        }
+        
     }else if (operator==="/" && num2 == 0){
         return "A number is not divisible by 0."
+        
     } else if (operator==="/"){
-        return divide(num1,num2).toFixed(3)
+        if (divide(num1,num2)%1==0){
+            return divide(num1,num2)
+        } else {
+            return divide(num1,num2).toFixed(3)
+        }
     } else {
         return "Oops,error"
 
