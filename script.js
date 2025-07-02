@@ -1,10 +1,10 @@
-let firstNum = null;
-
-let secondNum = null;
-
 let operator = null;
 
 let arr = []
+
+let timesCalled = 0
+
+let result = null
 
 const add = function(num1,num2){
     return num1+num2
@@ -51,43 +51,54 @@ const calculatorLogic = function(){
     };
     populateDisplay()
 
-    function saveNum(){
-        btnContainer.addEventListener("click",function(e){
-            const btnClicked = e.target;
-            if (btnClicked.hasAttribute("data-operator")){
-                arr[0]=display.textContent;
-                arr[1]=btnClicked.getAttribute("data-operator")
-                display.textContent=""
-                
-            }
-            
-        })
-    }
-    saveNum()
+    function operateNum(){ //Modify an existing array, operate on numbers, loop or get a result
 
-    function useOperate(){
-        btnContainer.addEventListener("click", function(e){
+        btnContainer.addEventListener("click", function(e){ 
             const btnClicked = e.target;
-            if (btnClicked.hasAttribute("data-equal")){
-                secondNum = display.textContent;
+            if(btnClicked.hasAttribute("data-operator") && timesCalled == 0){
+                saveNum(e)
+                display.textContent = ""
+                timesCalled += 1;
+            } else if (btnClicked.hasAttribute("data-operator")){
+                let firstNum = arr[0]
+                secondNum=display.textContent;
+                arr[0] = operate(Number(firstNum),Number(secondNum),arr[1])
+                arr[1] = btnClicked.getAttribute("data-operator")
+                console.log(arr)
+                display.textContent = ""
+
+            } else if (btnClicked.hasAttribute("data-equal")){ //click on equal
+                let secondNum = display.textContent;
                 result = operate(Number(arr[0]),Number(secondNum),arr[1])
                 console.log(result)
             }
+            //Block at the initial state
+            //Save numbers in arr
+            //Operate the numbers
+            //Modify result
+
+        //Block after the code has been run a first time.
+            //Modify the arr with the given result.
+            //save the operator
+            //Modify result
         })
+        
     }
-    useOperate()
+    
+    function saveNum(e){
+        const opClicked = e.target
+        arr[0]= display.textContent
+        arr[1]= opClicked.getAttribute("data-operator")
+    }
+    operateNum()
+
+    
 };
 
 calculatorLogic()
 console.log(arr)
 
-//Mechanic : 
-//I click on buttons and it prompts a number on the display
-// I use the click on an operator to store the value and the operator. 
-//The display is cleared
-// the user can continue to enter more number. 
-// if he clicks again on an operator, I hold the temporary result and the operator. They can continue to type in numbers. 
-// when he clicks on =, display the result. 
+
 
 
 
