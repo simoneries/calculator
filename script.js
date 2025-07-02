@@ -32,6 +32,7 @@ const operate = function(num1,num2,operator){
         return divide(num1,num2)
     } else {
         return "Oops,error"
+
     }
 };
 
@@ -67,9 +68,14 @@ const calculatorLogic = function(){
                 display.textContent = ""
 
             } else if (btnClicked.hasAttribute("data-equal")){ //click on equal
-                let secondNum = display.textContent;
-                result = operate(Number(arr[0]),Number(secondNum),arr[1])
-                display.textContent = result
+                if(arr.length == 0){
+                    display.textContent=""
+                } else {
+                    let secondNum = display.textContent;
+                    result = operate(Number(arr[0]),Number(secondNum),arr[1])
+                    display.textContent = result
+                }
+                
             }
         })
         
