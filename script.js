@@ -75,7 +75,12 @@ const calculatorLogic = function(){
                 } else {
                     let secondNum = display.textContent;
                     result = operate(Number(arr[0]),Number(secondNum),arr[1])
-                    display.textContent = result
+                    display.textContent = result;
+                    //clean values
+                    arr=[]
+                    timesCalled=0
+                    result=null
+                    console.log(arr)
                 }
                 
             }
@@ -100,12 +105,12 @@ const clearButton = function(){
         result=null;
         arr = [];
         timesCalled = 0
-        console.log(arr)
     })
 }
 
 calculatorLogic()
 clearButton()
+
 
 
 
