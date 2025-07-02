@@ -5,6 +5,8 @@ let timesCalled = 0
 
 let result = null
 
+let equalUsed = false
+
 const add = function(num1,num2){
     return num1+num2
 };
@@ -46,7 +48,11 @@ const calculatorLogic = function(){
     function populateDisplay(){
         btnContainer.addEventListener("click",function(e){
             const btnClicked = e.target;
+            if (equalUsed){
+                display.textContent="";
+            } 
             if(btnClicked.hasAttribute("data-value")){
+                equalUsed=false  //switch off the value when starting typing again
                 display.textContent += btnClicked.getAttribute("data-value")
             }
         })
@@ -77,6 +83,7 @@ const calculatorLogic = function(){
                     result = operate(Number(arr[0]),Number(secondNum),arr[1])
                     display.textContent = result;
                     //clean values
+                    equalUsed=true
                     arr=[]
                     timesCalled=0
                     result=null
