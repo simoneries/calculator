@@ -52,9 +52,9 @@ const calculatorLogic = function(){
     function populateDisplay(){
         btnContainer.addEventListener("click",function(e){
             const btnClicked = e.target;
-            if (equalUsed){
+            if (equalUsed){ // prevent the equal nothing bug
                 display.textContent="";
-            } if(btnClicked.hasAttribute("data-return")){
+            } if(btnClicked.hasAttribute("data-return")){ // backspace button
                 display.textContent=display.textContent.slice(0,-1)
             }
             if(btnClicked.hasAttribute("data-value")){
@@ -71,10 +71,12 @@ const calculatorLogic = function(){
 
         btnContainer.addEventListener("click", function(e){ 
             const btnClicked = e.target;
-            if(btnClicked.hasAttribute("data-operator") && timesCalled == 0){
+
+            if(btnClicked.hasAttribute("data-operator") && timesCalled == 0){ //initializes the array
                 saveNum(e)
                 display.textContent = ""
                 timesCalled += 1;
+
             } else if (btnClicked.hasAttribute("data-operator")){//Block when the user click on another operator
                 let firstNum = arr[0]
                 secondNum=display.textContent;
@@ -84,14 +86,14 @@ const calculatorLogic = function(){
                 display.textContent = ""
 
             } else if (btnClicked.hasAttribute("data-equal")){ //click on equal
-                if(arr.length == 0){
+                if(arr.length == 0){ // do not work if the array is not populated
                     display.textContent=""
                 } else {
                     let secondNum = display.textContent;
                     result = operate(Number(arr[0]),Number(secondNum),arr[1])
                     display.textContent = result;
-                    //clean values
-                    equalUsed=true
+                    
+                    equalUsed=true //clean values
                     arr=[]
                     timesCalled=0
                     result=null
@@ -103,7 +105,7 @@ const calculatorLogic = function(){
         
     }
     
-    function saveNum(e){
+    function saveNum(e){ //saved the passed in numbers
         const opClicked = e.target
         arr[0]= display.textContent
         arr[1]= opClicked.getAttribute("data-operator")
