@@ -54,10 +54,12 @@ const calculatorLogic = function(){
             const btnClicked = e.target;
             if (equalUsed){
                 display.textContent="";
-            } 
+            }
             if(btnClicked.hasAttribute("data-value")){
-                equalUsed=false  //switch off the value when starting typing again
-                display.textContent += btnClicked.getAttribute("data-value")
+                if(display.textContent.includes(".") && btnClicked.getAttribute("data-value")==="."){ // prevent the use of double decimals
+                } else{
+                    equalUsed=false  //switch off the value when starting typing again
+                    display.textContent += btnClicked.getAttribute("data-value")}
             }
         })
     };
