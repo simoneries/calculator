@@ -1,4 +1,3 @@
-let operator = null;
 
 let arr = []
 
@@ -70,7 +69,7 @@ const calculatorLogic = function(){
             } else if (btnClicked.hasAttribute("data-equal")){ //click on equal
                 let secondNum = display.textContent;
                 result = operate(Number(arr[0]),Number(secondNum),arr[1])
-                console.log(result)
+                display.textContent = result
             }
         })
         
@@ -86,7 +85,20 @@ const calculatorLogic = function(){
     
 };
 
+const clearButton = function(){
+    clearBtn = document.querySelector("#clear")
+    clearBtn.addEventListener("click",function(e){
+        display.textContent = "";
+        result=null;
+        arr = [];
+        timesCalled = 0
+        console.log(arr)
+    })
+}
+
 calculatorLogic()
+clearButton()
+
 
 
 
