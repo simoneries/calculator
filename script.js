@@ -57,7 +57,10 @@ const calculatorLogic = function(){
             if (btnClicked.hasAttribute("data-operator")){
                 arr[0]=display.textContent;
                 arr[1]=btnClicked.getAttribute("data-operator")
+                display.textContent=""
+                
             }
+            
         })
     }
     saveNum()
@@ -65,7 +68,7 @@ const calculatorLogic = function(){
     function useOperate(){
         btnContainer.addEventListener("click", function(e){
             const btnClicked = e.target;
-            if (btnClicked.hasAttribute("data-operator")&&arr.length>0){
+            if (btnClicked.hasAttribute("data-equal")){
                 secondNum = display.textContent;
                 result = operate(Number(arr[0]),Number(secondNum),arr[1])
                 console.log(result)
