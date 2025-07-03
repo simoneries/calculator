@@ -46,7 +46,7 @@ const operate = function(num1,num2,operator){
 
 const calculatorLogic = function(){
     
-    const btnContainer = document.querySelector("#buttonContainer");
+    const btnContainer = document.querySelector("#button-container");
     const display = document.querySelector("#display")
    
     function populateDisplay(){
