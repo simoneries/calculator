@@ -20,7 +20,10 @@ body{
     min-height: 50px;
     min-width:200px;
     border-radius: 10px;
-
+    color:white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
 }
 
 #button-container{
