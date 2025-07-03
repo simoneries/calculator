@@ -5,16 +5,20 @@
 body{
     display: flex;
     justify-content: center;
+    border-radius: 10px;
 }
 
 #calc-container{
     min-width: 66%;
+    border-radius: 10px;
 }
 
 #display{
     background-color: black;
     min-height: 50px;
-    min-width:200px
+    min-width:200px;
+    border-radius: 10px;
+
 }
 
 #button-container{
@@ -45,6 +49,12 @@ body{
 
 #row button{
     flex:1;
+
+}
+
+button{
+    border-radius: 5px;
+    border : none;
 }
 
 
