@@ -59,6 +59,10 @@ button{
     border : none;
 }
 
+#operator-container button {
+    min-width: 70px;
+}
+
 
 
 
