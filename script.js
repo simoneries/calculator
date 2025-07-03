@@ -87,7 +87,11 @@ const calculatorLogic = function(){
 
             } else if (btnClicked.hasAttribute("data-equal")){ //click on equal
                 if(arr.length == 0){ // do not work if the array is not populated
-                    display.textContent=""
+                    if(display.textContent!=""){
+                        display.textContent = display.textContent
+                    } else {
+                        display.textContent=""
+                    }
                 } else {
                     let secondNum = display.textContent;
                     result = operate(Number(arr[0]),Number(secondNum),arr[1])
