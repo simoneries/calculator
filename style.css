@@ -12,4 +12,14 @@ body{
     min-height: 50px;
 }
 
+#button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#operator-container{
+    display: flex;
+    flex-direction: column;
+}
+
 
