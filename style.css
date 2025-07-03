@@ -8,8 +8,6 @@ body{
 }
 
 #calc-container{
-
-    min-height:600px;
     min-width: 66%;
 }
 
@@ -29,7 +27,17 @@ body{
 #operator-container{
     display: flex;
     flex-direction: column;
+    gap:10px;
 }
+
+#number-container{
+    max-width: 2/3;
+    display: flex;
+    flex-direction: column;
+    gap : 10px;
+    flex:1;
+}
+
 
 
 
